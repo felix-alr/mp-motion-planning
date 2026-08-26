@@ -1,6 +1,6 @@
-# Trajectory Generation Using Motion Primitives
+# Safe Trajectory Generation Using Pre-Recorded Trajectories
 ## Overview
-In this project, I explore approaches for trajectory generation for robot arms using movement primitives / imitation learning as a way to adapt recorded movement trajectories to a given set of environmental / physical conditions.
+In this project, I explore approaches for trajectory generation for robot arms using imitation learning as a way to adapt recorded movement trajectories to a given set of environmental / physical conditions.
 
 ## Introduction
 Generating trajectories plays a key role in deploying robots in real-world environments.
@@ -13,12 +13,16 @@ In order to generate a trajectory that satisfies a variable set of conditions re
 3. Finding / developing a flexible solution for the application.
 
 ## Requirements
-1. variable start and end-point
-2. variable time of the complete movement
-3. prerecorded movement to shape the spatial and temporal progression
-4. timed via points for precise control of temporal and spatial progression
-5. constraints for obstacle avoidance (e.g. stay at least 5cm away from this point; stay within 5cm from this point while moving)
-6. online changes to constraints
+1. imitate a pre-recorded trajectory, shaping the spatial and temporal progression
+2. variable start and end-point
+3. variable time of the movement
+4. timed via points for precise control of temporal progression
+5. spatial safety constraints
+ - minimum distance from object (e.g. point, trajectory)
+ - forbidden coordinate values (e.g. angles) to ensure that multiple arms do not collide
+7. stability constraints
+ - maximum allowable deviation from optimal (scaled) pre-recorded trajectory progression to ensure the generated trajectory is precise where it needs to be
+8. online changes to constraints
 
 ## Preliminary System Architechture For Generating Trajectories
 <img src="media/System%20Diagram%20For%20Trajectory%20Generation.png" alt="System Architecture" width="70%"/>
