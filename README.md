@@ -20,9 +20,9 @@ In order to generate a trajectory that satisfies a variable set of conditions re
 5. spatial safety constraints
  - minimum distance from object (e.g. point, trajectory)
  - forbidden coordinate values (e.g. angles) to ensure that multiple arms do not collide
-7. stability constraints
+6. stability constraints
  - maximum allowable deviation from optimal (scaled) pre-recorded trajectory progression to ensure the generated trajectory is precise where it needs to be
-8. online changes to constraints
+7. online changes to constraints
 
 ## Preliminary System Architechture For Generating Trajectories
 <img src="media/System%20Diagram%20For%20Trajectory%20Generation.png" alt="System Architecture" width="70%"/>
