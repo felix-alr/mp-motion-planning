@@ -6,6 +6,7 @@ In this project, I explore approaches for trajectory generation for robot arms u
 Generating trajectories plays a key role in deploying robots in real-world environments.
 Often, tasks may require specific trajectory shapes which are generally the same but need adapting to specific environmental and physical conditions.
 In order to generate a trajectory that satisfies a variable set of conditions regarding boundaries, temporal evolution, trajectory altering based on physical restrictions or obstacles, it might be necessary to use multiple approaches to achieve a more general solution to the problem at hand.
+Further, a task may require multiple sub-movements requiring smooth chaining.
 
 ## Key Goals
 1. Implementing different approaches for testing.
@@ -16,13 +17,15 @@ In order to generate a trajectory that satisfies a variable set of conditions re
 1. imitate a pre-recorded trajectory, shaping the spatial and temporal progression
 2. variable start and end-point
 3. variable time of the movement
-4. timed via points for precise control of temporal progression
-5. spatial safety constraints
+4. variable initial state (relevant for chaining motions)
+5. timed via points for precise control of temporal progression
+6. spatial safety constraints
  - minimum distance from object (e.g. point, trajectory)
  - forbidden coordinate values (e.g. angles) to ensure that multiple arms do not collide
-6. stability constraints
+7. stability constraints
  - maximum allowable deviation from optimal (scaled) pre-recorded trajectory progression to ensure the generated trajectory is precise where it needs to be
-7. online changes to constraints
+8. online changes to constraints
+9. possibility for expansion e.g. to allow for contact tasks that might require further steps such as force control
 
 ## Preliminary System Architechture For Generating Trajectories
 <img src="media/System%20Diagram%20For%20Trajectory%20Generation.png" alt="System Architecture" width="70%"/>
