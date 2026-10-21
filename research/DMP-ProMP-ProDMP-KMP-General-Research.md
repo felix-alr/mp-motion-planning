@@ -78,11 +78,34 @@
 - See also the general MP survey: Zotero `Gutierrez2026_SUMP2MUE`, arXiv `2601.02379`
 
 # ProDMP
-## Inputs
+### For Learning
+- $y$ of multiple demonstrations [Li 2023, Eq. 17]
+  - $y_0, \dot{y}_0$ boundary condition for fitting [Li 2023, Eq. 15]
+  - $\tau$ demo duration
+
+### At Runtime
+- $y_b, \dot{y}_b \text{ at } t=t_b$: initial system state [Li 2023, Sec. III-C]
+- $\tau$: time scaling constant [Li 2023, Eq. 1]
+- Model: $\mu_{w_g}, \Sigma_{w_g}, \Phi, \dot{\Phi}$ [Li 2023, Eq. 11, 13, 17]
+- query times $t$ where the trajectory is evaluated [Li 2023, Sec. IV]
+- (optional) conditioning targets including $\Sigma^*$ (desired covariance) [Li 2023, Sec. III-D]
+  - $g^*$: target (attractor) point
+  - via-points $(t^*, y^*)$ (optionally with target velocities)
+
 ## Outputs
+- mean trajectory $\bar{y}(t), \dot{\bar{y}}(t)$ [Li 2023, Eq. 17]
+- covariance $\Sigma_y(t)$ [Li 2023, Eq. 17]
+- (optional) samples [Li 2023, Fig. 3b]
 ## Parameters
+### Hyperparameters
+- $N$: number of basis functions [Li 2023, Eq. 1]
+- $\alpha, \beta$ with ($\alpha = 4\beta$), $\alpha_x$ (phase decay) [Li 2023, Eq. 1, 5]
+- (optional) $\lambda$: regularization
 ## Constraint Handling
 ## Applications
+
+## Sources
+- [Li 2023] Li et al.: *ProDMP: A Unified Perspective on Dynamic and Probabilistic Movement Primitives*, IEEE RA-L 8(4), 2023. DOI `10.1109/LRA.2023.3248443`, arXiv `2210.01531`, Zotero `Li2022_4C3BJJMS`. Section and equation numbers refer to arXiv v1
 
 # KMP
 ## Inputs
